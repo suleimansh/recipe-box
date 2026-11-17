@@ -1,0 +1,36 @@
+/* Cooking timers: small pill buttons after the step text. */
+.timer-group { display: inline-flex; align-items: center; gap: .2rem; margin-left: .35rem; vertical-align: baseline; white-space: nowrap; }
+
+.timer {
+  display: inline-flex; align-items: center;
+  padding: .1rem .6rem;
+  border: 1px solid #e5e5e0; border-radius: 999px;
+  background: #fafaf7; color: #1f2328;
+  font: inherit; font-size: .8rem; line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.timer:hover { border-color: #c8c8bf; background: #fff; }
+.timer:focus-visible, .timer-reset:focus-visible { outline: 2px solid #4a7c3a; outline-offset: 2px; }
+
+.timer[data-state="running"] { border-color: #9cbf8c; background: #eef3ea; }
+.timer[data-state="paused"] { border-style: dashed; color: #6b6b63; }
+.timer[data-state="done"] { border-color: #e0a100; background: #ffe58a; font-weight: 600; animation: timer-pulse 1s ease-in-out 3; }
+
+.timer-reset {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.3rem; height: 1.3rem; padding: 0;
+  border: 1px solid #e5e5e0; border-radius: 999px;
+  background: #fafaf7; color: #6b6b63;
+  font: inherit; font-size: .85rem; line-height: 1;
+  cursor: pointer;
+}
+.timer-reset:hover { color: #1f2328; background: #fff; }
+.timer-reset[hidden] { display: none; }
+
+/* Status text for screen readers only. */
+.timer-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@keyframes timer-pulse { 50% { box-shadow: 0 0 0 4px rgba(224, 161, 0, .3); } }
+@media (prefers-reduced-motion: reduce) { .timer[data-state="done"] { animation: none; } }
+@media print { .timer-group { display: none; } }
