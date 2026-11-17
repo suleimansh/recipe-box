@@ -4,12 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Recipe Box</title>
+  <script>
+    // Apply a saved theme before first paint so the page doesn't flash the wrong colours.
+    try {
+      const theme = localStorage.getItem('theme')
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Recipe Box</h1>
-    <input id="search" type="search" placeholder="Search recipes or ingredients">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search recipes or ingredients">
+      <button id="theme-toggle" type="button"></button>
+    </div>
   </header>
   <main>
     <ul id="list" class="cards"></ul>

@@ -44,3 +44,27 @@ function open(r) {
     <ol>${r.steps.map(s => `<li>${s}</li>`).join('')}</ol>`
   document.getElementById('back').addEventListener('click', () => render(recipes))
 }
+
+// Theme: follows the system until the user picks one with the toggle; the pick is saved.
+const themeToggle = document.getElementById('theme-toggle')
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)')
+
+function currentTheme() {
+  return document.documentElement.dataset.theme || (systemDark.matches ? 'dark' : 'light')
+}
+
+function updateThemeToggle() {
+  const dark = currentTheme() === 'dark'
+  themeToggle.textContent = dark ? '☀️ Light' : '🌙 Dark'
+  themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode')
+}
+
+themeToggle.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark'
+  document.documentElement.dataset.theme = next
+  try { localStorage.setItem('theme', next) } catch (e) {}
+  updateThemeToggle()
+})
+
+systemDark.addEventListener('change', updateThemeToggle)
+updateThemeToggle()
