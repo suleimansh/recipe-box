@@ -9,7 +9,10 @@
 <body>
   <header>
     <h1>Recipe Box</h1>
-    <input id="search" type="search" placeholder="Search recipes or ingredients">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search recipes or ingredients" aria-label="Search recipes or ingredients">
+      <button id="favourites-only" type="button" aria-pressed="false">♥ Favourites</button>
+    </div>
   </header>
   <main>
     <ul id="list" class="cards"></ul>
