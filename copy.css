@@ -1,0 +1,23 @@
+/* Copy ingredients button: a small secondary button beside the Ingredients heading. */
+@media screen {
+  #recipe .ingredients-heading:has(+ .copy-ingredients) {
+    display: inline-block;
+    margin-right: .75rem;
+  }
+}
+
+.copy-ingredients {
+  vertical-align: middle;
+  padding: .2rem .65rem;
+  font: inherit;
+  font-size: .8rem;
+  color: #4a4a43;
+  background: #fafaf7;
+  border: 1px solid #e5e5e0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.copy-ingredients:hover { background: #f0f0ea; border-color: #d0d0c8; }
+.copy-ingredients:focus-visible { outline: 2px solid #9bb38c; outline-offset: 2px; }
+.copy-ingredients:active { background: #e9e9e2; }
