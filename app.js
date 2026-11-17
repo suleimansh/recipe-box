@@ -35,12 +35,13 @@ function open(r) {
   list.hidden = true
   view.hidden = false
   view.innerHTML = `
-    <button id="back">← All recipes</button>
+    <div class="recipe-actions no-print"><button id="back">← All recipes</button></div>
     <h2>${r.name}</h2>
     <p class="meta">${r.minutes} min · serves ${r.serves}</p>
-    <h3>Ingredients</h3>
-    <ul>${r.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+    <h3 class="ingredients-heading">Ingredients</h3>
+    <ul class="ingredients">${r.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
     <h3>Steps</h3>
-    <ol>${r.steps.map(s => `<li>${s}</li>`).join('')}</ol>`
+    <ol class="steps">${r.steps.map(s => `<li class="step">${s}</li>`).join('')}</ol>`
   document.getElementById('back').addEventListener('click', () => render(recipes))
+  document.dispatchEvent(new CustomEvent('recipe:open', { detail: { recipe: r, view } }))
 }
