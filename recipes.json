@@ -1,0 +1,14 @@
+[
+  { "id": "shakshuka", "name": "Shakshuka", "minutes": 30, "serves": 2, "tags": ["breakfast", "vegetarian"],
+    "ingredients": ["4 eggs", "1 can crushed tomatoes", "1 red pepper", "1 onion", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika"],
+    "steps": ["Soften the onion and pepper in olive oil.", "Add garlic and spices, then the tomatoes. Simmer 10 minutes.", "Make wells, crack in the eggs, cover until set."] },
+  { "id": "lentil-soup", "name": "Red lentil soup", "minutes": 35, "serves": 4, "tags": ["soup", "vegan"],
+    "ingredients": ["250 g red lentils", "1 onion", "2 carrots", "1 l vegetable stock", "1 tsp cumin", "1 lemon"],
+    "steps": ["Soften onion and carrot.", "Add lentils, cumin and stock. Simmer 20 minutes.", "Blend, then finish with lemon juice."] },
+  { "id": "pasta-pomodoro", "name": "Pasta al pomodoro", "minutes": 25, "serves": 2, "tags": ["pasta", "vegetarian"],
+    "ingredients": ["200 g spaghetti", "400 g cherry tomatoes", "2 cloves garlic", "basil", "parmesan"],
+    "steps": ["Cook the pasta.", "Blister tomatoes with garlic in olive oil.", "Toss with pasta, basil and parmesan."] },
+  { "id": "chicken-tacos", "name": "Chicken tacos", "minutes": 40, "serves": 4, "tags": ["dinner"],
+    "ingredients": ["500 g chicken thighs", "8 tortillas", "1 lime", "1 avocado", "red onion", "coriander", "1 tsp chili powder"],
+    "steps": ["Season and grill the chicken.", "Slice and squeeze lime over it.", "Fill warm tortillas with chicken, avocado, onion and coriander."] }
+]
