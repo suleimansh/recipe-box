@@ -1,0 +1,84 @@
+/* Print-friendly recipe layout. Every rule is print-only: nothing here changes the screen. */
+@page { margin: 1.5cm; }
+
+@media print {
+  header,
+  #list,
+  .no-print { display: none !important; }
+
+  html,
+  body {
+    margin: 0;
+    background: #fff !important;
+    color: #000 !important;
+    font: 11.5pt/1.45 Georgia, "Times New Roman", Times, serif;
+  }
+
+  main {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* No card chrome on paper. */
+  #recipe,
+  #recipe *,
+  .card {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  #recipe,
+  .card {
+    border: 0 !important;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Title and meta stay together at the top of the first page. */
+  #recipe h2 {
+    margin: 0 0 .2em;
+    font-size: 20pt;
+    line-height: 1.2;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  #recipe .meta {
+    margin: 0 0 1.2em;
+    font-size: 10.5pt;
+    color: #333 !important;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  #recipe h3 {
+    margin: 1.2em 0 .4em;
+    font-size: 13pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  #recipe .ingredients,
+  #recipe .steps {
+    margin: 0;
+    padding-left: 1.4em;
+  }
+
+  #recipe .ingredients li,
+  #recipe .steps li {
+    margin: 0 0 .3em;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  #recipe .steps li { margin-bottom: .55em; }
+
+  /* Long ingredient lists go into two columns (class set by print.js; :has() as a fallback). */
+  #recipe .ingredients.print-columns,
+  #recipe .ingredients:has(> li:nth-child(6)) {
+    columns: 2;
+    column-gap: 2em;
+  }
+}
