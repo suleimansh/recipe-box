@@ -9,3 +9,12 @@ main { max-width: 960px; margin: 0 auto; padding: 2rem; }
 .card h2 { margin: 0 0 .25rem; font-size: 1.05rem; }
 .meta { color: #6b6b63; font-size: .85rem; }
 .tag { display: inline-block; margin: .5rem .25rem 0 0; padding: .1rem .5rem; border-radius: 999px; background: #eef3ea; font-size: .75rem; }
+.controls { display: flex; gap: .5rem; align-items: center; }
+#favourites-only { padding: .5rem .75rem; border: 1px solid #d0d0c8; border-radius: 8px; background: #fff; font: inherit; color: inherit; cursor: pointer; }
+#favourites-only[aria-pressed="true"] { background: #fde8ec; border-color: #e5a3b0; color: #b4233c; }
+.card { position: relative; }
+.card h2 { padding-right: 2rem; }
+.heart { position: absolute; top: .6rem; right: .6rem; padding: .1rem .35rem; border: 0; background: none; font-size: 1.3rem; line-height: 1; color: #9a9a90; cursor: pointer; border-radius: 6px; }
+.heart:hover { color: #b4233c; }
+.heart[aria-pressed="true"] { color: #d6304f; }
+.empty { grid-column: 1 / -1; color: #6b6b63; }
